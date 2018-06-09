@@ -13,45 +13,40 @@ function onOpen() {
 };
 
 function highlightRows() {
-  // Get array of values in the search Range
   var rangeValues = searchRange.getValues();
-  // Loop through array and if condition met, add relevant
-  // background color.
   for ( i = 0; i < lastColumn - 1; i++){
     for ( j = 0 ; j < lastRow - 1; j++){
-      if(rangeValues[j][i].indexOf("Austria") > -1
-         || rangeValues[j][i].indexOf("Belgium") > -1
-         || rangeValues[j][i].indexOf("Bulgaria") > -1
-         || rangeValues[j][i].indexOf("Croatia") > -1
-         || rangeValues[j][i].indexOf("Hrvatska") > -1
-         || rangeValues[j][i].indexOf("Cyprus") > -1
-         || rangeValues[j][i].indexOf("Czech Republic") > -1
-         || rangeValues[j][i].indexOf("Denmark") > -1
-         || rangeValues[j][i].indexOf("Estonia") > -1
-         || rangeValues[j][i].indexOf("Finland") > -1
-         || rangeValues[j][i].indexOf("France") > -1
-         || rangeValues[j][i].indexOf("Germany") > -1
-         || rangeValues[j][i].indexOf("Greece") > -1
-         || rangeValues[j][i].indexOf("Great Britain ") > -1
-         || rangeValues[j][i].indexOf("UK") > -1
-         || rangeValues[j][i].indexOf("Luxembourg") > -1
-         || rangeValues[j][i].indexOf("Malta") > -1
-         || rangeValues[j][i].indexOf("Netherlands") > -1
-         || rangeValues[j][i].indexOf("Poland") > -1
-         || rangeValues[j][i].indexOf("Portugal") > -1
-         || rangeValues[j][i].indexOf("Romania") > -1
-         || rangeValues[j][i].indexOf("Slovakia") > -1
-         || rangeValues[j][i].indexOf("Slovenia") > -1
-         || rangeValues[j][i].indexOf("Spain") > -1
-         || rangeValues[j][i].indexOf("Sweden") > -1){
-        sheet.getRange(j+2,i+5).setBackground("#cc4125"); //donation amount
-        sheet.getRange(j+2,i+4).setBackground("#cc4125"); //seller profit
-        sheet.getRange(j+2,i+3).setBackground("#cc4125"); //order number
+      if(rangeValues[j][i].toUpperCase().indexOf("AUSTRIA") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("BELGIUM") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("BULGARIA") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("CROATIA") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("HRVATSKA") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("CYPRUS") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("CZECH REPUBLIC") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("DENMARK") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("ESTONIA") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("FINLAND") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("FRANCE") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("GERMANY") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("GREECE") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("GREAT BRITAIN ") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("UK") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("LUXEMBOURG") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("MALTA") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("NETHERLANDS") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("POLAND") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("PORTUGAL") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("ROMANIA") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("SLOVAKIA") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("SLOVENIA") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("SPAIN") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("SWEDEN") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("LITHUANIA") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("LATVIA") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("ITALY") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("IRELAND") > -1
+         || rangeValues[j][i].toUpperCase().indexOf("HUNGARY") > -1){
         sheet.getRange(j+2,i+2).setBackground("#cc4125"); //address
-        sheet.getRange(j+2,i+1).setBackground("#cc4125"); //email
-        sheet.getRange(j+2,i-1).setBackground("#cc4125"); //order number
-        sheet.getRange(j+2,i-2).setBackground("#cc4125"); //campaign name
-
       }else if (rangeValues[j][i] === 0){
         sheet.getRange(j+2,i+2).setBackground("#e69138");
       };
